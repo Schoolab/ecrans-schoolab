@@ -90,6 +90,10 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 					element.find('.'+key).html(event[key]);
 				}
 
+				if (event['host'] == '') {
+					element.find('.eventhost').remove();
+				}
+
 				element.find('.image').remove();
 
 				// insère dans le HTML de la page
