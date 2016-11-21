@@ -1,0 +1,132 @@
+
+@font-face {
+    font-family: 'circularblack';
+    src: url('../CircularStd-Black.otf');
+}
+@font-face {
+    font-family: 'circularbook';
+    src: url('../CircularStd-Book.otf');
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#today_date{
+  position: fixed;
+  overflow: hidden;
+  display: block;
+  height: 195px;
+  width: 100px;
+  top: 48px;
+  left: 48px;
+  text-align: center;
+  * {
+    width: 100%;
+  }
+  .day{
+    font-family: circularblack;
+    font-size: 40px;
+    font-weight: bold;
+    color: #202545;
+    margin: 0px;
+  }
+  .date{
+    font-family: sans-serif;
+    font-weight: bold;
+    position: absolute;
+    color: #F44E63;
+    font-size: 72px;
+    line-height: 80px;
+    top: 39px;
+    margin: 0px;
+    left: 4px;
+  }
+  .month{
+    font-size: 40px;
+    font-family: circularblack;
+    position: relative;
+    font-weight: bold;
+    top: 53px;
+    margin: 0px;
+    color: #202545;
+  }
+}
+
+#isis{
+  margin-left: 15%;
+  margin-top: 48px;
+}
+
+#hidden-event {
+  display: none;
+}
+
+.event {
+    background-color: #F5F5F5;
+    width: 90%;
+    margin-bottom: 24px;
+}
+
+.eventinfos {
+  padding: 24px;
+}
+
+.right {
+  float: right;
+  text-align: right;
+  .eventhour{
+    font-family: circularblack;
+    color: #202545;
+    font-size: 30px;
+  }
+
+  .eventhost{
+    font-family: circularbook;
+    color: #777777;
+
+  }
+}
+
+.eventtitle{
+  font-family: circularblack;
+  color: #202545;
+  font-size: 30px;
+  margin: 0;
+}
+
+.eventlocation{
+  font-family: circularbook;
+  color: #F44E63;
+  margin: 0;
+}
+
+.eventdesc{
+  clear: right;
+  font-family: circularbook;
+  line-height: 1.5;
+  color: #777777;
+  margin: 12px 0 0;
+}
+.eventimg{
+    width: 100%;
+    height: 300px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #F44E63;
+  width: 100%;
+  height: 156px;
+  padding-top: 33px;
+  padding-right: 33px;
+  .logoschl{
+    float: right;
+    height: 80px;
+  }
+}
