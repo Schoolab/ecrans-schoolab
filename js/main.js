@@ -10,6 +10,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		'Sam',
 		'Dim'
 	];
+
 	// Nom des mois en français
 	var frenchMonths = [
 		'Jan',
@@ -24,6 +25,17 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		'Oct',
 		'Nov',
 		'Déc'
+	];
+
+	// Day colors
+	var dayColors = [
+		'#377AF4',
+		'#F44E63',
+		'#4FE88D',
+		'#FFA543',
+		'#FDCC47',
+		'#377AF4',
+		'#377AF4'
 	];
 
 	// Fonction pour formatter l'heure en 18H ou 09H30, etc.
@@ -49,6 +61,11 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		// Mois
 		var month = frenchMonths[today.getMonth()].toUpperCase();
 		$todayDiv.find('.month').html(month);
+
+		// Set Color to day color
+		var dayColor = dayColors[today.getDay() - 1];
+		$('.dayColor').css('color', dayColor);
+		$('.dayBgColor').css('background-color', dayColor);
 
 		var url = 'http://admin.theschoolab.com/api/v1/events/today'; // définit l'url de l'api
 
@@ -86,5 +103,16 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 	// Lance la fonction toutes les 10 minutes
 	updateScreen();
 	var updateInterval = setInterval(updateScreen, 60000);
+
+	// Scroll auto
+  var scrolltopbottom =  setInterval(function(){
+  	var scrollDistance = $(document).height() - $(window).height();
+         // 4000 - it will take 4 secound in total from the top of the page to the bottom
+	  $("html, body").animate({ scrollTop: scrollDistance }, 10000);
+	  setTimeout(function() {
+	     $('html, body').animate({scrollTop:0}, 10000);
+	  },10000);
+
+  }, 20000);
 
 });
