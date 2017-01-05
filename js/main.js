@@ -120,3 +120,6 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
   }, 20000);
 
 });
+
+ //function fullscreen
+

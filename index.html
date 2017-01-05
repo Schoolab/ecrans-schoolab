@@ -5,48 +5,69 @@
   <link rel="stylesheet" type="text/css" href="css/ecranstyle.css">
   <title></title>
 </head>
-<body>
+<body id="body" id="container">
 
-  <div id="today_date">
+<div id="container">
+      <div id="today_date">
 
-    <p class="day">---</p>
-    <p class="date dayColor">--</p>
-    <p class="month">---</p>
+        <p class="day">---</p>
+        <p class="date dayColor">--</p>
+        <p class="month">---</p>
 
-  </div>
-
-  <div id="isis">
-
-  </div>
-
-  <article class="event" id="hidden-event">
-    <div class="eventinfos">
-      <div class="right">
-        <div class="eventhour"> <span class="start_time">8H</span>-<span class="end_time">18H</span> </div>
-        <div class="eventhost"> par <span class="host">Schoolab</span> </div>
       </div>
-      <h1 class="eventtitle title">
-        PETIT DEJENER MY SEZAME
-      </h1>
-      <h2 class="eventlocation location dayColor">
-        Orange.Big au 2e étage
-      </h2>
 
-        <p class="eventdesc description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</br> Aliquam interdum sapien eros, quis pulvinar nisi scelerisque ut. Mauris cursus sed.
-        </p>
-    </div>
+      <div id="isis">
 
-    <div style="background-image: url('http://lorempicsum.com/futurama/900/500/2');" class="eventimg image"></div>
+      </div>
 
-  </article>
+      <article class="event" id="hidden-event">
+        <div class="eventinfos">
+          <div class="right">
+            <div class="eventhour"> <span class="start_time">8H</span>-<span class="end_time">18H</span> </div>
+            <div class="eventhost"> par <span class="host">Schoolab</span> </div>
+          </div>
+          <h1 class="eventtitle title">
+            PETIT DEJENER MY SEZAME
+          </h1>
+          <h2 class="eventlocation location dayColor">
+            Orange.Big au 2e étage
+          </h2>
 
-  <footer id="footer" class="dayBgColor">
-    <img class="logoschl" src="css/img/schoolablogo.png">
-  </footer>
+            <p class="eventdesc description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.</br> Aliquam interdum sapien eros, quis pulvinar nisi scelerisque ut. Mauris cursus sed.
+            </p>
 
+            <!--<button id="fullbutton" onclick="full()">Try it</button>-->
+        </div>
+
+        <div style="background-image: url('http://lorempicsum.com/futurama/900/500/2');" class="eventimg image"></div>
+
+      </article>
+
+      <footer id="footer" class="dayBgColor">
+        <img class="logoschl" src="css/img/schoolablogo.png">
+      </footer>
+</div>
   <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  
+  <script type="text/javascript">    
+  $(document).ready(function(){
+      var elem = document.getElementById("body");
+      console.log(elem);
+
+      full = function() {
+              req = elem.requestFullScreen || elem.webkitRequestFullScreen || elem.mozRequestFullScreen;
+              req.call(elem);
+
+              console.log('work')
+          }
+
+          full();
+      });
+
+        // $(document).ready(function()  {$('#fullbutton').trigger('click');  console.log("press") });    
+  </script>
 
 </body>
 </html>
