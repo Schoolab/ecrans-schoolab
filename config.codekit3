@@ -7,8 +7,14 @@
 		"uuidString": "960E13D4-38E8-4BBC-820B-EBC1A94CCEA9"
 		}
 	],
-"creatorBuild": "25444",
+"creatorBuild": "25504",
 "files": {
+	"\/.sass-cache\/b9321d037e7a045aa41be2efaeabac1c15ec9aa7\/ecranstyle.scssc": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.sass-cache\/b9321d037e7a045aa41be2efaeabac1c15ec9aa7\/ecranstyle.scssc",
+		"oF": 0
+		},
 	"\/.sass-cache\/d2af4d85491ab0dff9e4df5a4d80cd6670e5c2b7\/ecranstyle.scssc": {
 		"ft": 8192,
 		"oA": 2,
@@ -128,16 +134,10 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/css\/ecranstyle-min.css",
 		"oF": 0,
 		"oS": 0
-		},
-	"\/css\/ecranstyle.css.map": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/css\/ecranstyle.css.map",
-		"oF": 0
 		},
 	"\/css\/img\/schoolablogo.png": {
 		"ft": 32768,
@@ -149,7 +149,7 @@
 		},
 	"\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/index.html",
 		"oF": 0
 		},
@@ -158,15 +158,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/min\/main-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
-	"\/js\/min\/ecran-min.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/js\/min\/min\/ecran-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -180,21 +171,14 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/scss\/.sass-cache\/50a3ec8c88e5743fbef022abe3459be99e62c630\/ecranstyle.scssc": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/scss\/.sass-cache\/50a3ec8c88e5743fbef022abe3459be99e62c630\/ecranstyle.scssc",
-		"oF": 0
-		},
-	"\/scss\/ecranstyle.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
+	"\/js\/vendor\/jquery-1.11.0.min.js": {
+		"ft": 64,
+		"mi": 1,
 		"oA": 0,
-		"oAP": "\/scss\/ecranstyle-min.css",
+		"oAP": "\/js\/vendor\/min\/jquery-1.11.0.min-min.js",
 		"oF": 0,
-		"oS": 0
+		"sC": 1,
+		"tS": 0
 		},
 	"\/scss\/ecranstyle.scss": {
 		"aP": 0,
@@ -662,6 +646,10 @@
 			"active": 0,
 			"optionString": "{'properties': 'always'}"
 			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
+			},
 		"class-methods-use-this": {
 			"active": 0,
 			"optionString": "{'exceptMethods': []}"
@@ -826,6 +814,10 @@
 			"active": 0,
 			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
 			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
+			},
 		"multiline-ternary": {
 			"active": 0,
 			"optionString": "'always'"
@@ -855,6 +847,10 @@
 			"optionString": ""
 			},
 		"no-array-constructor": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-await-in-loop": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -1190,6 +1186,10 @@
 			"active": 0,
 			"optionString": "'except-parens'"
 			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-script-url": {
 			"active": 0,
 			"optionString": ""
@@ -1394,6 +1394,10 @@
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
 			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
@@ -1421,6 +1425,10 @@
 		"radix": {
 			"active": 0,
 			"optionString": "'always'"
+			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
 			},
 		"require-jsdoc": {
 			"active": 0,
@@ -2254,6 +2262,10 @@
 			},
 		"space-colon": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"toplevel": {

@@ -1,5 +1,32 @@
 $(document).ready(function() { // Attend que la page ait chargé pour lancer le JS
 
+	$.fn.containerSlides = function(time) {
+		that = this;
+		var slides = that.find('.container'),
+			current = 0,
+			nbOfSlides = slides.length;
+
+		function activate(index) {
+			slides.removeClass('active').eq(index).addClass('active');
+		}
+
+		function next() {
+			if (current + 1 === nbOfSlides) {
+				current = 0;
+			} else {
+				current++;
+			}
+			activate(current);
+		}
+
+		activate(current);
+		var interval = setInterval(next, time);
+
+		return this;
+	}
+
+	$('body').containerSlides(20000);
+
 	// Nom des jours en français
 	var frenchDays = [
 		'Lun',
@@ -46,8 +73,8 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		return strTime;
 	}
 
-	// Fonction pour charger les événements du jour et la date
-	function updateScreen() {
+	// Fonction pour mettre à jour la date et l'heure
+	function updateTime() {
 
 		// Récupère la date d'aujourd'hui et la met à jour
 		var today = new Date();
@@ -61,11 +88,18 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		// Mois
 		var month = frenchMonths[today.getMonth()].toUpperCase();
 		$todayDiv.find('.month').html(month);
+		// Heure
+		var time = today.getHours() + 'H' + today.getMinutes();
+		$todayDiv.find('.time').html(time);
 
 		// Set Color to day color
 		var dayColor = dayColors[today.getDay() - 1];
 		$('.dayColor').css('color', dayColor);
 		$('.dayBgColor').css('background-color', dayColor);
+	}
+
+	// Fonction pour charger les événements du jour
+	function updateScreen() {
 
 		var url = 'http://admin.theschoolab.com/api/v1/events/today'; // définit l'url de l'api
 
@@ -105,8 +139,10 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 	}
 
 	// Lance la fonction toutes les 10 minutes
-	updateScreen();
-	var updateInterval = setInterval(updateScreen, 60000);
+	updateTime();
+	var updateTimeInterval = setInterval(updateTime, 1);
+	// updateScreen();
+	// var updateScreenInterval = setInterval(updateScreen, 60000);
 
 	// Scroll auto
   var scrolltopbottom =  setInterval(function(){
