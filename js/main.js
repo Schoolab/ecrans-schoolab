@@ -90,13 +90,17 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		$todayDiv.find('.month').html(month);
 		// Heure
 		var time = today.getHours() + 'H' + today.getMinutes();
-		$todayDiv.find('.time').html(time);
+		$todayDiv.find('.time').html(formatHHMM(today));
 
 		// Set Color to day color
 		var dayColor = dayColors[today.getDay() - 1];
 		$('.dayColor').css('color', dayColor);
 		$('.dayBgColor').css('background-color', dayColor);
 	}
+
+	// Met à jour l'heure toutes les secondes
+	updateTime();
+	var updateTimeInterval = setInterval(updateTime, 1);
 
 	// Fonction pour charger les événements du jour
 	function updateScreen() {
@@ -105,7 +109,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 		$.getJSON(url).done(function(data) { // fait une requète GET à l'API
 
-			$('#isis').empty();
+			$('#events').empty();
 
 			$.each(data, function(index, event) { // fait une boucle sur la liste des
 
@@ -131,18 +135,15 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 				element.find('.image').remove();
 
 				// insère dans le HTML de la page
-				$('#isis').append(element);
+				$('#events').append(element);
 			});
 
 		});
 
 	}
-
-	// Lance la fonction toutes les 10 minutes
-	updateTime();
-	var updateTimeInterval = setInterval(updateTime, 1);
-	// updateScreen();
-	// var updateScreenInterval = setInterval(updateScreen, 60000);
+	// Met à jour les events toutes les 10 minutes
+	updateScreen();
+	var updateScreenInterval = setInterval(updateScreen, 60000);
 
 	// Scroll auto
   var scrolltopbottom =  setInterval(function(){
