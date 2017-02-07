@@ -25,7 +25,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		return this;
 	}
 
-	$('body').containerSlides(20000);
+	$('body').containerSlides(30000);
 
 	// Nom des jours en français
 	var frenchDays = [
