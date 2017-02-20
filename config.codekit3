@@ -9,18 +9,6 @@
 	],
 "creatorBuild": "25504",
 "files": {
-	"\/.sass-cache\/b9321d037e7a045aa41be2efaeabac1c15ec9aa7\/ecranstyle.scssc": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/.sass-cache\/b9321d037e7a045aa41be2efaeabac1c15ec9aa7\/ecranstyle.scssc",
-		"oF": 0
-		},
-	"\/.sass-cache\/d2af4d85491ab0dff9e4df5a4d80cd6670e5c2b7\/ecranstyle.scssc": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/.sass-cache\/d2af4d85491ab0dff9e4df5a4d80cd6670e5c2b7\/ecranstyle.scssc",
-		"oF": 0
-		},
 	"\/circular\/CircularStd-Black 2.otf": {
 		"ft": 8192,
 		"oA": 2,
@@ -130,11 +118,11 @@
 		"oF": 0
 		},
 	"\/css\/ecranstyle.css": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 2,
+		"oA": 0,
 		"oAP": "\/css\/ecranstyle-min.css",
 		"oF": 0,
 		"oS": 0
@@ -147,6 +135,14 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/image-lab-postal.png": {
+		"ft": 32768,
+		"iS": 129611,
+		"oA": 0,
+		"oAP": "\/image-lab-postal.png",
+		"oF": 0,
+		"opt": 1
+		},
 	"\/index.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -157,7 +153,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/min\/main-min.js",
+		"oAP": "\/js\/main-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -166,7 +162,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/min\/min\/main-min-min.js",
+		"oAP": "\/js\/min\/main-min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -175,7 +171,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/vendor\/min\/jquery-1.11.0.min-min.js",
+		"oAP": "\/js\/vendor\/jquery-1.11.0.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -188,10 +184,16 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/ecranstyle.css",
+		"oAP": "\/scss\/ecranstyle.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/video-lab-postal.mp4": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/video-lab-postal.mp4",
+		"oF": 0
 		}
 	},
 "hooks": [
@@ -1420,7 +1422,7 @@
 			},
 		"quotes": {
 			"active": 0,
-			"optionString": "'double', 'avoid-escape'"
+			"optionString": "'double', {'avoidEscape': true, 'allowTemplateLiterals': true}"
 			},
 		"radix": {
 			"active": 0,
@@ -1432,7 +1434,7 @@
 			},
 		"require-jsdoc": {
 			"active": 0,
-			"optionString": "{'require': {'FunctionDeclaration': true, 'MethodDefinition': false, 'ClassDeclaration': false}}"
+			"optionString": "{'require': {'FunctionDeclaration': true, 'MethodDefinition': false, 'ClassDeclaration': false, 'ArrowFunctionExpression': false}}"
 			},
 		"require-yield": {
 			"active": 0,
@@ -1901,7 +1903,7 @@
 		"syntaxCheckerStyle": 1
 		},
 	"languageDefaultsCSS": {
-		"autoOutputAction": 2,
+		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*-min.css",
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
@@ -1909,7 +1911,7 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"outputStyle": 3,
-		"shouldRunAutoprefixer": 0,
+		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0
 		},
 	"languageDefaultsGIF": {
@@ -1949,7 +1951,7 @@
 		"autoOutputPathRelativePath": "\/min",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 2,
+		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"minifyOutput": 1,
 		"syntaxCheckerStyle": 1,
@@ -1977,8 +1979,8 @@
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.html",
 		"autoOutputPathRelativePath": "",
-		"autoOutputPathReplace1": "",
-		"autoOutputPathReplace2": "",
+		"autoOutputPathReplace1": "kit",
+		"autoOutputPathReplace2": "html",
 		"autoOutputPathStyle": 0
 		},
 	"languageDefaultsLESS": {
@@ -1988,8 +1990,8 @@
 		"autoOutputPathRelativePath": "..\/css",
 		"autoOutputPathReplace1": "less",
 		"autoOutputPathReplace2": "css",
-		"autoOutputPathStyle": 2,
-		"createSourceMap": 0,
+		"autoOutputPathStyle": 0,
+		"createSourceMap": 1,
 		"disableJavascript": 0,
 		"ieCompatibility": 1,
 		"outputStyle": 0,
@@ -2052,7 +2054,7 @@
 		"autoOutputPathRelativePath": "..\/css",
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
-		"autoOutputPathStyle": 2,
+		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
@@ -2080,7 +2082,7 @@
 		"autoOutputPathRelativePath": "..\/css",
 		"autoOutputPathReplace1": "stylus",
 		"autoOutputPathReplace2": "css",
-		"autoOutputPathStyle": 2,
+		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"importCSS": 0,
@@ -2104,7 +2106,7 @@
 		"autoOutputPathRelativePath": "\/js",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 2,
+		"autoOutputPathStyle": 0,
 		"createDeclarationFile": 0,
 		"createSourceMap": 0,
 		"jsxMode": 0,
@@ -2245,7 +2247,7 @@
 			"flagValue": -1
 			},
 		"screw-ie8": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"semicolons": {
