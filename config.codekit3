@@ -176,6 +176,24 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/mickael.gif": {
+		"ft": 4194304,
+		"iS": 3484643,
+		"oA": 0,
+		"oAP": "\/mickael.gif",
+		"oF": 0,
+		"opt": 1
+		},
+	"\/scss\/ecranstyle.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/scss\/ecranstyle-min.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/scss\/ecranstyle.scss": {
 		"aP": 0,
 		"bl": 0,

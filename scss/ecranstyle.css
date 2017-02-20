@@ -1,13 +1,10 @@
-
 @font-face {
   font-family: 'circularblack';
-  src: url('../CircularStd-Black.otf');
-}
+  src: url("../CircularStd-Black.otf"); }
+
 @font-face {
   font-family: 'circularbook';
-  src: url('../CircularStd-Book.otf');
-}
-
+  src: url("../CircularStd-Book.otf"); }
 
 body {
   margin: 0;
@@ -16,8 +13,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: relative;
-}
+  position: relative; }
 
 .container {
   background-color: white;
@@ -29,18 +25,15 @@ body {
   opacity: 0;
   transition: opacity 1s linear;
   pointer-events: none;
-  overflow-y: scroll;
-  &.active {
+  overflow-y: scroll; }
+  .container.active {
     opacity: 1;
-    pointer-events: all;
-  }
-}
+    pointer-events: all; }
 
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-#today_date{
+#today_date {
   position: fixed;
   display: block;
   width: 13%;
@@ -48,52 +41,44 @@ body {
   left: 0;
   margin: 0 1%;
   overflow: hidden;
-  text-align: center;
-  * {
-    width: 100%;
-  }
-  .day, .date, .month, .time {
-    margin: 0;
-  }
-  .day{
+  text-align: center; }
+  #today_date * {
+    width: 100%; }
+  #today_date .day, #today_date .date, #today_date .month, #today_date .time {
+    margin: 0; }
+  #today_date .day {
     font-family: circularblack;
     font-size: 40px;
     line-height: 40px;
     font-weight: bold;
-    color: #202545;
-  }
-  .date{
+    color: #202545; }
+  #today_date .date {
     font-family: circularblack;
     font-weight: bold;
     color: #F44E63;
     font-size: 72px;
     line-height: 60px;
     margin-top: 2px;
-    margin-bottom: 10px;
-  }
-  .month{
+    margin-bottom: 10px; }
+  #today_date .month {
     font-size: 40px;
     line-height: 40px;
     font-family: circularblack;
     font-weight: bold;
-    color: #202545;
-  }
-  .time{
+    color: #202545; }
+  #today_date .time {
     font-size: 40px;
     line-height: 40px;
     font-family: circularblack;
     font-weight: bold;
     color: #F44E63;
-    margin-top: 20px;
-  }
-}
+    margin-top: 20px; }
 
 #events {
   margin-left: 15%;
   margin-right: 30%;
   margin-top: 2vw;
-  margin-bottom: 144px;
-}
+  margin-bottom: 144px; }
 
 #feature {
   position: fixed;
@@ -101,73 +86,59 @@ body {
   right: 0;
   width: 26%;
   height: auto;
-  margin: 0 2%;
-  h2 {
+  margin: 0 2%; }
+  #feature h2 {
     text-align: center;
     font-family: circularblack;
     font-size: 32px;
-    margin-top: 0;
-  }
-  img {
+    margin-top: 0; }
+  #feature img {
     width: 100%;
-    height: auto;
-  }
-}
+    height: auto; }
 
 #hidden-event {
-  display: none;
-}
+  display: none; }
 
 .event {
   background-color: #F5F5F5;
   width: 100%;
-  margin-bottom: 2vw;
-}
+  margin-bottom: 2vw; }
 
 .eventinfos {
-  padding: 24px;
-}
+  padding: 24px; }
 
 .right {
   float: right;
-  text-align: right;
-  .eventhour{
+  text-align: right; }
+  .right .eventhour {
     font-family: circularblack;
     color: #202545;
-    font-size: 30px;
-  }
-
-  .eventhost{
+    font-size: 30px; }
+  .right .eventhost {
     font-family: circularbook;
-    color: #777777;
+    color: #777777; }
 
-  }
-}
-
-.eventtitle{
+.eventtitle {
   font-family: circularblack;
   color: #202545;
   font-size: 30px;
-  margin: 0;
-}
+  margin: 0; }
 
-.eventlocation{
+.eventlocation {
   font-family: circularbook;
   color: #F44E63;
-  margin: 0;
-}
+  margin: 0; }
 
-.eventdesc{
+.eventdesc {
   clear: right;
   font-family: circularbook;
   line-height: 1.5;
   color: #777777;
-  margin: 12px 0 0;
-}
-.eventimg{
+  margin: 12px 0 0; }
+
+.eventimg {
   width: 100%;
-  height: 300px;
-}
+  height: 300px; }
 
 #footer {
   position: fixed;
@@ -176,11 +147,7 @@ body {
   width: 100%;
   height: 120px;
   padding-top: 30px;
-  padding-right: 30px;
-  .logoschl{
+  padding-right: 30px; }
+  #footer .logoschl {
     float: right;
-    height: 60px;
-  }
-}
-
-
+    height: 60px; }

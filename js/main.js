@@ -1,6 +1,6 @@
 $(document).ready(function() { // Attend que la page ait chargé pour lancer le JS
 
-	$.fn.containerSlides = function(time) {
+	$.fn.containerSlides = function(defaultTime) {
 		that = this;
 		var slides = that.find('.container'),
 			current = 0,
@@ -8,6 +8,12 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 		function activate(index) {
 			slides.removeClass('active').eq(index).addClass('active');
+			var slideTime = slides.eq(index).data('time');
+			if (slideTime) {
+				setTimeout(next, slideTime);
+			} else {
+				setTimeout(next, defaultTime);
+			}
 		}
 
 		function next() {
@@ -20,7 +26,6 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		}
 
 		activate(current);
-		var interval = setInterval(next, time);
 
 		return this;
 	}
