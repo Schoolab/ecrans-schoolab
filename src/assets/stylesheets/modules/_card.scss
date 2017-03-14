@@ -48,9 +48,9 @@
   position: relative;
 
   &:before {
+    @include linearGradient(rgba($black, 0), rgba($black, .25));
     position: absolute;
     content: '';
-    background: rgba(red,.1);
     width: 100%;
     height: 10rem;
     bottom: 0;
@@ -60,7 +60,7 @@
 }
 
 .card-media--video {
-
+  display: block;
 }
 
 .card-media--content {
@@ -72,7 +72,22 @@
   padding: 1.5rem;
 }
 
+.card-media--about {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: rgba($white, .75);
+
+  .about-icon {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin: 0 .5rem 0 0;
+    vertical-align: text-top;
+  }
+}
+
 .card-media--title {
+  font-size: 1.5rem;
+  line-height: 2rem;
   color: $white;
 }
 
