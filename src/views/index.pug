@@ -1,0 +1,73 @@
+doctype html
+html(lang='en')
+  head
+    title Aujourd'hui – Schoolab Inside
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui")
+    link(rel="stylesheet", href="css/main.css")
+  body
+
+    header.header.dayBgColor
+      nav.navbar.navbar-inverse.navbar-schoolab
+        .container
+          a.navbar-brand(href='#') Schoolab Inside
+          .navbar-date
+            .navbar-date--part.day
+            .navbar-date--part.date
+            .navbar-date--part.month
+            .navbar-hour
+              i.material-icons.time-icon access_time
+              .navbar-date--part.time
+
+    .container
+      .row.content-slide(data-time='1000')
+        .col-xs-12.col-md-4
+          .card
+            .card-block
+              h2 Les nouvelles têtes
+
+        .col-xs-12.col-md-8
+          #events
+          .card#hidden-event.event
+            .card-block.eventinfos
+              .card-title
+                .card-title--prefix.dayColor
+                  | Aujourd'hui de #[span.start_time] à #[span.end_time]
+                h2.title Lorem ipsum
+                .card-title--suffix.eventhost
+                  | par #[span.host]
+              //- .card-text.eventdesc.description
+              .card-bottom
+                .card-event--floor
+                  i.material-icons.floor-icon view_agenda
+                  .eventlocation.location
+                .card-event--price.price
+
+      .row.content-slide(data-time='10000')
+        .col
+          .card
+            .card-media
+              video.card-media--video(src='videos/video-presentation-schoolab.mp4', autoplay='', loop='', muted='', style='width: 100%;')
+                | Sorry, your browser doesn't support embedded videos,
+                | but don't worry, you can
+                a(href='videos/video-presentation-schoolab.mp4') download it
+                |               and watch it with your favorite video player!
+              .card-media--content
+                i.material-icons play_circle_filled
+                .card-media--about
+                  | En ce moment
+                  h2.card-media--title Présentation de Schoolab
+
+
+
+    script(type='text/javascript', src='js/vendors/jquery-1.11.0.min.js')
+    script(type='text/javascript', src='js/main.min.js')
+    script(type='text/javascript').
+      $(document).ready(function(){
+      var elem = document.getElementById("body");
+      full = function() {
+      req = elem.requestFullScreen || elem.webkitRequestFullScreen || elem.mozRequestFullScreen;
+      req.call(elem);
+      }
+      full();
+      });
+      // $(document).ready(function()  {$('#fullbutton').trigger('click');  console.log("press") });

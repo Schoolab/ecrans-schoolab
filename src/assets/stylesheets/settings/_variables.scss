@@ -1,0 +1,56 @@
+// -------------------------------------
+// Basic colors
+// -------------------------------------
+
+$white:                     #FFFFFF;
+$black:                     #000000;
+
+
+// -------------------------------------
+// Brand colors
+// -------------------------------------
+
+
+$brand-primary:             #202545;
+$brand-secondary:           #377AF4;
+$brand-blue:                #377AF4;
+$brand-cyan:                #27DFF2;
+$brand-green:               #4FE88D;
+$brand-yellow:              #FDCC47;
+$brand-orange:              #FFA543;
+$brand-red:                 #F44E63;
+
+// Brand declinaisons
+$brand-75:                  #555971;
+$brand-50:                  #898C9C;
+$brand-25:                  #BDBEC6;
+$brand-15:                  #DCDDE0;
+$brand-10:                  #EAEAEC;
+$brand-05:                  #F4F4F5;
+
+$background-color:          $brand-05;
+$link-color:                $brand-secondary;
+$link-hover-color:          $brand-secondary;
+
+// TODO: use Compass?
+// $bootstrap-path:            "../../node_modules/bootstrap/scss";
+
+// -------------------------------------
+// Fonts
+// -------------------------------------
+
+$brand-font:                CircularStd, sans-serif;
+$headings-font:             $brand-font;
+$font-family-base:          $brand-font;
+$icons-font:                Material Icons;
+
+
+// -------------------------------------
+// Other
+// -------------------------------------
+
+$border-radius-small:       .125rem;
+$border-radius-base:        .25rem;
+$border-radius-large:       .375rem;
+$border-color:              rgba($black, .1);
+$box-shadow-color:          rgba($black, .04);

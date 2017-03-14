@@ -1,0 +1,63 @@
+.navbar-schoolab {
+  background-color: transparent;
+  border-color: none;
+  padding: 2rem 0;
+  margin: 0;
+  border: none;
+
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.navbar-brand {
+  height: 3rem;
+  padding: 0 1rem;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  position: relative;
+
+  &:before {
+    content: '🎓';
+    font-family: Schoolab Icons;
+    font-size: 3rem;
+    color: $white;
+    font-size: 3rem;
+    line-height: initial;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.navbar-date {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-family: $brand-font;
+  color: rgba($white, .75);
+}
+
+.navbar-date--part {
+  display: inline-block;;
+  margin-left: .25rem;
+
+  &.date, &.month {
+    font-weight: bold;
+  }
+}
+
+.navbar-hour {
+  display: inline-block;
+  color: $white;
+  margin: 0 0 0 .75rem;
+}
+
+.time-icon {
+  font-size: 1.625rem;
+  line-height: 3rem;
+  vertical-align: bottom;
+}
