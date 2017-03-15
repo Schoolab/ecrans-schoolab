@@ -114,7 +114,9 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 	function updateScreen() {
 
 		var url = 'http://admin.theschoolab.com/api/v1/events/today'; // définit l'url de l'api
+		var url_last_residents = 'http://admin.theschoolab.com/api/v1/residents/last';
 
+		// EVENTS
 		$.getJSON(url).done(function(data) { // fait une requète GET à l'API
 
 			$('#events').empty();
@@ -150,6 +152,40 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 				// insère dans le HTML de la page
 				$('#events').append(element);
+			});
+
+		});
+
+		// RESIDENTS
+		$.getJSON(url_last_residents).done(function(data) { // fait une requète GET à l'API
+
+			$('#residents').empty();
+
+			$.each(data, function(index, resident) { // fait une boucle sur la liste des
+
+				// Clone le HTML exemple
+				var element = $('#hidden-resident').clone();
+
+				// Retire l'id
+				element.attr('id', '');
+
+				// Ajoute chaque info de l'événement dans le HTML
+				for (var key in resident) {
+					if (key == 'photo') {
+						element.find('.'+key).html('<img class="photo-resident" src="' + resident[key] + '" alt="User Photo" />');
+					} else if (key == 'company') {
+						element.find('.'+key).html(resident[key].name);
+					} else {
+						element.find('.'+key).html(resident[key]);
+					}
+				}
+
+				if (resident.photo == '/images/original/missing.png') {
+					element.find('.photo-resident').remove();
+				}
+
+				// insère dans le HTML de la page
+				$('#residents').append(element);
 			});
 
 		});

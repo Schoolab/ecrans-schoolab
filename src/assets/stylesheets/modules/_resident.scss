@@ -1,0 +1,78 @@
+.residents-list {
+
+}
+
+.resident-item {
+  display: flex;
+
+  &:not(:last-child) {
+    margin: 0 0 1rem;
+  }
+}
+
+.resident-item--avatar {
+  display: flex;
+  flex-shrink: 0;
+  background: $brand-15;
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 .75rem 0 0;
+
+  img {
+    position: relative;
+    z-index: 2;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  &:before {
+    position: absolute;
+    z-index: 1;
+    content: 'person';
+    font-family: Material Icons;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    color: $brand-50;
+  }
+
+  &:after {
+    position: absolute;
+    z-index: 3;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+.resident-item--title {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: $brand-primary;
+}
+
+.resident-item--subtitle {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: $brand-75;
+  margin: 0;
+}
+
+#hidden-resident {
+  display: none;
+}

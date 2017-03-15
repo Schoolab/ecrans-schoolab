@@ -23,7 +23,17 @@ html(lang='en')
         .col-xs-12.col-md-4
           .card
             .card-block
-              h2 Les nouvelles têtes
+              h2.card-title Les nouvelles têtes
+              .residents-list#residents
+              .resident-item#hidden-resident
+                .resident-item--avatar.photo
+                .resident-item--content
+                  h3.resident-item--title
+                    | #[span.first_name] #[span.last_name]
+                  p.resident-item--subtitle
+                    span.title
+                    span.muted
+                      |  chez #[span.company]
 
         .col-xs-12.col-md-8.scroller
           .scroller-shadow.dayBgGradient
