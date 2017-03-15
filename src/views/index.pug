@@ -25,14 +25,17 @@ html(lang='en')
             .card-block
               h2 Les nouvelles têtes
 
-        .col-xs-12.col-md-8
+        .col-xs-12.col-md-8.scroller
+          .scroller-shadow.dayBgGradient
           #events
           .card#hidden-event.event
+            .card-top.image
+
             .card-block.eventinfos
               .card-title
                 .card-title--prefix.dayColor
                   | Aujourd'hui de #[span.start_time] à #[span.end_time]
-                h2.title Lorem ipsum
+                h2.title
                 .card-title--suffix.eventhost
                   | par #[span.host]
               //- .card-text.eventdesc.description
@@ -44,15 +47,13 @@ html(lang='en')
 
       .row.content-slide(data-time='120000')
         .col
-          .card
+          .card.has-media
             .card-media
-              video.card-media--video(src='videos/video-presentation-schoolab.mp4', autoplay='', loop='', muted='', style='width: 100%;')
-                | Sorry, your browser doesn't support embedded videos,
-                | but don't worry, you can
-                a(href='videos/video-presentation-schoolab.mp4') download it
-                |               and watch it with your favorite video player!
-              .card-media--content
+              video.card-media--video(crossorigin='anonymous', autoplay='', loop='', muted='', style='width: 100%;')
+                source(src='videos/video-presentation-schoolab.mp4', type='video/mp4')
+                track(src='videos/subtitles/video-presentation-schoolab-en.vtt', label='English', kind='subtitles', srclang='en', default='')
 
+              .card-media--content
                 .card-media--about
                   i.material-icons.about-icon play_circle_filled
                   | En ce moment

@@ -57,19 +57,29 @@ gulp.task('copy:vendors', function() {
 // Copy images
 gulp.task('copy:images', function() {
    gulp.src(src + 'assets/images/**/*.{png,jpg,jpeg,svg}')
-   .pipe(gulp.dest(dist + 'img'));
+   .pipe(gulp.dest(dist + 'img'))
+   .pipe(browserSync.stream())
 });
 
 // Copy videos
-gulp.task('copy:videos', function() {
+gulp.task('copy:videos', ['copy:subtitles'], function() {
    gulp.src(src + 'assets/videos/**/*.{mp4,mov}')
-   .pipe(gulp.dest(dist + 'videos'));
+   .pipe(gulp.dest(dist + 'videos'))
+   .pipe(browserSync.stream())
+});
+
+// Copy subtitles
+gulp.task('copy:subtitles', function() {
+   gulp.src(src + 'assets/videos/subtitles/**/*.vtt')
+   .pipe(gulp.dest(dist + 'videos/subtitles'))
+   .pipe(browserSync.stream())
 });
 
 // Copy fonts
 gulp.task('copy:fonts', function() {
    gulp.src(src + 'assets/fonts/**/*.{ttf,woff,eof,svg,otf}')
-   .pipe(gulp.dest(dist + 'fonts'));
+   .pipe(gulp.dest(dist + 'fonts'))
+   .pipe(browserSync.stream())
 });
 
 // Watch Files For Changes
@@ -79,6 +89,7 @@ gulp.task('watch', ['browserSync', 'compile'], function() {
   gulp.watch(src + 'assets/images/**/*.{png,jpg,jpeg,svg}', ['copy:images']);
   gulp.watch(src + 'assets/fonts/**/*.{ttf,woff,eof,svg}', ['copy:fonts']);
   gulp.watch(src + 'assets/videos/**/*.{mp4,mov}', ['copy:videos']);
+  gulp.watch(src + 'assets/videos/subtitles/**/*.vtt', ['copy:subtitles']);
   gulp.watch(src + 'views/**/*.pug', ['pug']);
 });
 
@@ -98,6 +109,6 @@ gulp.task('browserSync', function() {
 })
 
 // Default Task
-gulp.task('compile', ['pug', 'lint', 'sass', 'scripts']);
+gulp.task('compile', ['pug', 'lint', 'sass', 'scripts', 'copy']);
 gulp.task('copy', ['copy:images', 'copy:videos', 'copy:fonts']);
-gulp.task('default', ['pug', 'lint', 'sass', 'scripts', 'copy', 'watch']);
+gulp.task('default', ['compile', 'watch']);

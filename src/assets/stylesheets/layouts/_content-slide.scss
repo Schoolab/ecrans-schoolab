@@ -2,7 +2,6 @@
   opacity: 0;
   transition: opacity 1s linear;
   pointer-events: none;
-  overflow-y: scroll;
   display: none;
 
   &.active {

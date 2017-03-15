@@ -1,6 +1,28 @@
 .card {
   border-radius: $border-radius-small;
   margin: 0 auto 1rem;
+  box-shadow: 0 .125rem .25rem rgba($black, .04);
+}
+
+.card-top {
+  width: 100%;
+  height: auto;
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.card-top--image {
+  width: 100%;
+}
+
+.card-block {
+  padding: 2rem 1.5rem;
+}
+
+.card {
+  &.has-media {
+    border: none;
+  }
 }
 
 .card-title {
@@ -46,6 +68,8 @@
 
 .card-media {
   position: relative;
+  overflow: hidden;
+  border-radius: $border-radius-small;
 
   &:before {
     @include linearGradient(rgba($black, 0), rgba($black, .25));

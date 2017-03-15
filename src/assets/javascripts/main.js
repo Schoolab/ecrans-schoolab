@@ -28,7 +28,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		activate(current);
 
 		return this;
-	}
+	};
 
 	$('body').containerSlides(30000);
 
@@ -73,7 +73,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 	// Fonction pour formatter l'heure en 18H ou 09H30, etc.
 	function formatHHMM(date) {
 		var hours = date.getHours();
-		var minutes = (date.getMinutes() == 0) ? '': ('0' + date.getMinutes()).slice(-2);
+		var minutes = (date.getMinutes() === 0) ? '': ('0' + date.getMinutes()).slice(-2);
 		var strTime = hours + 'h' + minutes;
 		return strTime;
 	}
@@ -101,6 +101,9 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 		var dayColor = dayColors[today.getDay() - 1];
 		$('.dayColor').css('color', dayColor);
 		$('.dayBgColor').css('background-color', dayColor);
+		$('.dayBgGradient').css(
+			'background', 'linear-gradient(to bottom, ' + dayColor + ' 0%, transparent 100%)'
+		);
 	}
 
 	// Met à jour l'heure toutes les secondes
@@ -130,14 +133,20 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 						var time = new Date(event[key]);
 						event[key] = formatHHMM(time);
 					}
-					element.find('.'+key).html(event[key]);
+					if (key == 'image') {
+						element.find('.'+key).html('<img class="card-top--image" src="' + event[key] + '" alt="Event Image" />');
+					} else {
+						element.find('.'+key).html(event[key]);
+					}
 				}
 
-				if (event['host'] == '') {
+				if (event.host === '') {
 					element.find('.eventhost').remove();
 				}
 
-				element.find('.image').remove();
+				if (event.image === '') {
+					element.find('.image').remove();
+				}
 
 				// insère dans le HTML de la page
 				$('#events').append(element);
@@ -152,11 +161,11 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 	// Scroll auto
   var scrolltopbottom =  setInterval(function(){
-  	var scrollDistance = $(document).height() - $(window).height();
+  	var scrollDistance = $("#events").height();
          // 4000 - it will take 4 secound in total from the top of the page to the bottom
-	  $("html, body").animate({ scrollTop: scrollDistance }, 10000);
+	  $(".scroller").animate({ scrollTop: scrollDistance }, 20000);
 	  setTimeout(function() {
-	     $('html, body').animate({scrollTop:0}, 10000);
+	     $(".scroller").animate({scrollTop:0}, 10000);
 	  },10000);
 
   }, 20000);
