@@ -112,7 +112,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 	// Fonction pour charger les événements du jour
 	function updateScreen() {
-
+		console.log("salut");
 		var url = 'http://admin.theschoolab.com/api/v1/events/today'; // définit l'url de l'api
 		var url_last_residents = 'http://admin.theschoolab.com/api/v1/residents/last';
 
@@ -171,7 +171,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 				// Ajoute chaque info de l'événement dans le HTML
 				for (var key in resident) {
-					if (key == 'photo') {
+					if (key == 'photo' && resident[key] != null) {
 						element.find('.'+key).html('<img class="photo-resident" src="' + resident[key] + '" alt="User Photo" />');
 					} else if (key == 'company') {
 						element.find('.'+key).html(resident[key].name);
