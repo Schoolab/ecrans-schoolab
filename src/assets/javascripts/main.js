@@ -121,6 +121,8 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 			$('#events').empty();
 
+			$('#events-title').html(data.title);
+
 			$.each(data.events, function(index, event) { // fait une boucle sur la liste des
 
 				// Clone le HTML exemple
