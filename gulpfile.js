@@ -3,10 +3,13 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     jshint = require('gulp-jshint'),
     sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename');
     pug = require('gulp-pug');
+    plumber = require('gulp-plumber');
     // plugins = require('gulp-load-plugins')();
 
 // Define base folders
@@ -22,8 +25,15 @@ gulp.task('lint', function() {
 
 // Compile Our Sass
 gulp.task('sass', function() {
-  return gulp.src(src + 'assets/stylesheets/*.scss')
+  return gulp.src(src + 'assets/stylesheets/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(plumber())
     .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(dist + 'css'))
     .pipe(browserSync.stream())
 });
