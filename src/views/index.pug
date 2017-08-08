@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='fr')
   head
     title Aujourd'hui – Schoolab Inside
     meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui")
@@ -10,7 +10,7 @@ html(lang='en')
     header.header.dayBgColor
       nav.navbar.navbar-inverse.navbar-schoolab
         .container
-          a.navbar-brand(href='#') Schoolab Inside
+          a.navbar-brand(href='index.html') Schoolab Inside
           .navbar-date
             .navbar-date--part.day
             .navbar-date--part.date
@@ -21,7 +21,8 @@ html(lang='en')
 
     .container
       .row.content-slide(data-time='120000')
-        .col-xs-12.col-md-4
+        .col-12.page__title#events-title
+        .col-12.col-md-4
           .card
             .card-block
               h2.card-title Les nouvelles têtes
@@ -36,7 +37,7 @@ html(lang='en')
                     span.muted
                       |  chez #[span.company]
 
-        .col-xs-12.col-md-8.scroller
+        .col-12.col-md-8.scroller
           .scroller-shadow.dayBgGradient
           #events
           .card#hidden-event.event
@@ -77,11 +78,11 @@ html(lang='en')
     script(type='text/javascript', src='js/main.min.js')
     script(type='text/javascript').
       $(document).ready(function(){
-      var elem = document.getElementById("body");
-      full = function() {
-      req = elem.requestFullScreen || elem.webkitRequestFullScreen || elem.mozRequestFullScreen;
-      req.call(elem);
-      }
-      full();
+        var elem = document.getElementById("body");
+        full = function() {
+          req = elem.requestFullScreen || elem.webkitRequestFullScreen || elem.mozRequestFullScreen;
+          req.call(elem);
+        }
+        full();
       });
       // $(document).ready(function()  {$('#fullbutton').trigger('click');  console.log("press") });
