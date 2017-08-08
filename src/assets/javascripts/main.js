@@ -45,7 +45,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 	// Nom des mois en français
 	var frenchMonths = [
-		'janvien',
+		'janvier',
 		'février',
 		'mars',
 		'avril',
@@ -112,16 +112,16 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 	// Fonction pour charger les événements du jour
 	function updateScreen() {
-		console.log("salut");
-		var url = 'http://admin.theschoolab.com/api/v1/events/today'; // définit l'url de l'api
+
+		var url_events = 'http://admin.theschoolab.com/api/v1/events/today'; // définit l'url de l'api
 		var url_last_residents = 'http://admin.theschoolab.com/api/v1/residents/last';
 
 		// EVENTS
-		$.getJSON(url).done(function(data) { // fait une requète GET à l'API
+		$.getJSON(url_events).done(function(data) { // fait une requète GET à l'API
 
 			$('#events').empty();
 
-			$.each(data, function(index, event) { // fait une boucle sur la liste des
+			$.each(data.events, function(index, event) { // fait une boucle sur la liste des
 
 				// Clone le HTML exemple
 				var element = $('#hidden-event').clone();
