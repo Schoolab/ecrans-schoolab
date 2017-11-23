@@ -175,8 +175,8 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 				for (var key in resident) {
 					if (key == 'photo' && resident[key] != null) {
 						element.find('.'+key).html('<img class="photo-resident" src="' + resident[key] + '" alt="User Photo" />');
-					} else if (key == 'company') {
-						// element.find('.'+key).html(resident[key].name);
+					} else if (key == 'company' && resident[key] != null) {
+						element.find('.'+key).html(resident[key].name).closest('.hidden').removeClass('hidden');
 					} else {
 						element.find('.'+key).html(resident[key]);
 					}
