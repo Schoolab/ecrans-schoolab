@@ -148,7 +148,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 					element.find('.eventhost').remove();
 				}
 
-				if (event.image === '') {
+				if (event.image === '' || event.image === '/images/original/missing-image.png') {
 					element.find('.image').remove();
 				}
 
@@ -176,7 +176,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 					if (key == 'photo' && resident[key] != null) {
 						element.find('.'+key).html('<img class="photo-resident" src="' + resident[key] + '" alt="User Photo" />');
 					} else if (key == 'company') {
-						element.find('.'+key).html(resident[key].name);
+						// element.find('.'+key).html(resident[key].name);
 					} else {
 						element.find('.'+key).html(resident[key]);
 					}
@@ -210,4 +210,14 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 });
 
- //function fullscreen
+//function fullscreen
+addEventListener("click", function() {
+  var el = document.documentElement,
+    rfs = el.requestFullscreen
+      || el.webkitRequestFullScreen
+      || el.mozRequestFullScreen
+      || el.msRequestFullscreen
+  ;
+
+  rfs.call(el);
+});

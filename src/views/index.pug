@@ -34,8 +34,6 @@ html(lang='fr')
                     | #[span.first_name] #[span.last_name]
                   p.resident-item--subtitle
                     span.title
-                    span.muted
-                      |  chez #[span.company]
 
         .col-12.col-md-8.scroller
           .scroller-shadow.dayBgGradient
@@ -53,7 +51,7 @@ html(lang='fr')
               //- .card-text.eventdesc.description
               .card-bottom
                 .card-event--floor
-                  i.material-icons.floor-icon view_agenda
+                  i.material-icons.floor-icon location_city
                   .eventlocation.location
                 .card-event--price.price
 
@@ -72,17 +70,5 @@ html(lang='fr')
                   | En ce moment
                 h2.card-media--title Présentation de Schoolab
 
-
-
     script(type='text/javascript', src='js/vendors/jquery-1.11.0.min.js')
     script(type='text/javascript', src='js/main.min.js')
-    script(type='text/javascript').
-      $(document).ready(function(){
-        var elem = document.getElementById("body");
-        full = function() {
-          req = elem.requestFullScreen || elem.webkitRequestFullScreen || elem.mozRequestFullScreen;
-          req.call(elem);
-        }
-        full();
-      });
-      // $(document).ready(function()  {$('#fullbutton').trigger('click');  console.log("press") });
