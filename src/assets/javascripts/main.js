@@ -140,7 +140,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 						event[key] = formatHHMM(time);
 					}
 					if (key == 'api_blob_url') {
-						element.find('.'+key).html('<img class="card-top--image" src="' + event[key] + '" alt="Event Image" />');
+						element.find('.image').html('<img class="card-top--image" src="' + event[key] + '" alt="Event Image" />');
 					} else {
 						element.find('.'+key).html(event[key]);
 					}
