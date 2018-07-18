@@ -113,8 +113,10 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 	// Fonction pour charger les événements du jour
 	function updateScreen() {
 
-		var url_events = 'https://inside.theschoolab.com/api/v1/events/today'; // définit l'url de l'api
-		var url_last_residents = 'https://inside.theschoolab.com/api/v1/residents/last';
+		// var url_events = 'https://inside.theschoolab.com/api/v1/events/today'; // définit l'url de l'api
+		// var url_last_residents = 'https://inside.theschoolab.com/api/v1/residents/last';
+    var url_events = 'http://localhost:5000/api/v1/events/today'; // définit l'url de l'api
+    var url_last_residents = 'http://localhost:5000/api/v1/residents/last';
 
 		// EVENTS
 		$.getJSON(url_events).done(function(data) { // fait une requète GET à l'API
@@ -137,7 +139,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 						var time = new Date(event[key]);
 						event[key] = formatHHMM(time);
 					}
-					if (key == 'image') {
+					if (key == 'api_blob_url') {
 						element.find('.'+key).html('<img class="card-top--image" src="' + event[key] + '" alt="Event Image" />');
 					} else {
 						element.find('.'+key).html(event[key]);
@@ -148,7 +150,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 					element.find('.eventhost').remove();
 				}
 
-				if (event.image === '' || event.image === '/images/original/missing-image.png') {
+				if (event.api_blob_url === '') {
 					element.find('.image').remove();
 				}
 
