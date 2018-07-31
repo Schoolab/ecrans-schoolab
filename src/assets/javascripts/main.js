@@ -115,8 +115,8 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 		// var url_events = 'https://inside.theschoolab.com/api/v1/events/today'; // définit l'url de l'api
 		// var url_last_residents = 'https://inside.theschoolab.com/api/v1/residents/last';
-    var url_events = 'http://localhost:5000/api/v1/events/today'; // définit l'url de l'api
-    var url_last_residents = 'http://localhost:5000/api/v1/residents/last';
+    var url_events = 'https://schoolab-inside.herokuapp.com/api/v1/events/today'; // définit l'url de l'api
+    var url_last_residents = 'https://schoolab-inside.herokuapp.com/api/v1/residents/last';
 
 		// EVENTS
 		$.getJSON(url_events).done(function(data) { // fait une requète GET à l'API
