@@ -61,13 +61,13 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 	// Day colors
 	var dayColors = [
-		'#377AF4',
-		'#F44E63',
-		'#4FE88D',
-		'#FFA543',
-		'#FDCC47',
-		'#377AF4',
-		'#377AF4'
+		'#4B64FF',
+		'#FA3C1E',
+		'#4BC864',
+		'#FA8C1E',
+		'#FABE1E',
+		'#4B64FF',
+		'#4B64FF'
 	];
 
 	// Fonction pour formatter l'heure en 18H ou 09H30, etc.
@@ -146,6 +146,10 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 
 				if (event.host === '') {
 					element.find('.eventhost').remove();
+				}
+
+				if (event.location === '') {
+					element.find('.card-event--floor').remove();
 				}
 
 				if (event.image === '' || event.image === '/images/original/missing-image.png') {
