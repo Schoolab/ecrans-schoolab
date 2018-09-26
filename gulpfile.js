@@ -73,7 +73,7 @@ gulp.task('copy:images', function() {
 
 // Copy videos
 gulp.task('copy:videos', ['copy:subtitles'], function() {
-   gulp.src(src + 'assets/videos/**/*.{mp4,mov}')
+   gulp.src(src + 'assets/videos/**/*.{mp4,mov,m4v}')
    .pipe(gulp.dest(dist + 'videos'))
    .pipe(browserSync.stream())
 });

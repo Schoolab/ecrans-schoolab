@@ -20,7 +20,7 @@ html(lang='fr')
               .navbar-date--part.time
 
     .container
-      .row.content-slide(data-time='34500')
+      .row.content-slide(data-time='23500')
         .col-12.page__title#events-title
         .col-12.col-md-4
           .card
@@ -44,7 +44,7 @@ html(lang='fr')
             .card-block.eventinfos
               .card-title
                 .card-title--prefix.dayColor
-                  | #[span.friendly_date] de #[span.start_time] à #[span.end_time]
+                  | #[span.friendly_date.date] de #[span.start_time] à #[span.end_time]
                 h2.title
                 .card-title--suffix.eventhost
                   | par #[span.host]
@@ -53,22 +53,22 @@ html(lang='fr')
                 .card-event--floor
                   i.material-icons.floor-icon location_city
                   .eventlocation.location
-                .card-event--price.price
 
-      //- .row.content-slide(data-time='34500')
+      .row.content-slide(data-time='23500')
         .col
           .card.has-media
             .card-media
               video.card-media--video(crossorigin='anonymous', autoplay='', muted='', loop='', style='width: 100%;')
-                source(src='videos/video-presentation-schoolab.mp4', type='video/mp4')
-                track(src='videos/subtitles/video-presentation-schoolab-fr.vtt', label='Français', kind='subtitles', srclang='fr', default='')
-                track(src='videos/subtitles/video-presentation-schoolab-en.vtt', label='English', kind='subtitles', srclang='en')
+                source(src='videos/video-alpha.m4v', type='video/mp4')
+                //- track(src='videos/subtitles/video-presentation-schoolab-fr.vtt', label='Français', kind='subtitles', srclang='fr', default='')
+                //- track(src='videos/subtitles/video-presentation-schoolab-en.vtt', label='English', kind='subtitles', srclang='en')
 
               .card-media--content
                 .card-media--about
                   i.material-icons.about-icon play_circle_filled
                   | En ce moment
-                h2.card-media--title Présentation de Schoolab
+                //- h2.card-media--title Présentation de Schoolab
+                h2.card-media--title Présentation de Kick Store
 
     script(type='text/javascript', src='js/vendors/jquery-1.11.0.min.js')
     script(type='text/javascript', src='js/main.min.js')
