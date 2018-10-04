@@ -148,7 +148,7 @@ $(document).ready(function() { // Attend que la page ait chargé pour lancer le 
 					element.find('.eventhost').remove();
 				}
 
-				if (event.image === '') {
+				if (event.image === null) {
 					element.find('.image').remove();
 				}
 
